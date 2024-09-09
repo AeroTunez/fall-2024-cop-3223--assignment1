@@ -12,10 +12,11 @@
 // Header Files
 #include <stdio.h>
 #include <math.h>
-#define PI = 3.14159;
+s
+#define PI = 3.14159 //Preproccessor directive for PI.
 
-// Prototypes
-void askForUserInput();
+// Prototypes for the functions
+void askForUserInput(double* x1, double* x2, double* y1, double* y2);
 double calculateDistance();
 double calculatePerimeter();
 double calculateArea();
@@ -23,97 +24,104 @@ double calculateWidth();
 double calculateHeight();
 
 // Main Function
-int main (int argc, char**argv)
+int main(int argc, char** argv)
 {
+	//Calling the functions
 
-//Calling the functions
+	double calculateDistance();
+	double calculatePerimeter();
+	double calculateArea();
+	double calculateWidth();
+	double calculateHeight();
 
-void askForUserInput();
-double calculateDistance();
-double calculatePerimeter();
-double calculateArea();
-double calculateWidth();
-double calculateHeight();
-
-return 1;
+	return 1;
 }
 
-// This would be the functions that are called in main
-void askForUserInput(double x1, double x2, double y1, double y2);
+// Functions
+void askForUserInput(double* x1, double* x2, double* y1, double* y2) // To distinguish functions, and to pass them to the rest of the functions
 {
-printf("Please enter 2 variables for point 1 (x,y): ")
+	//Asks user for the variables for X & Y and scans them for the rest of the functions to reference to.
 
-scanf("%f", &x1);
-scanf("%f", &x2);
+	printf("Please enter 2 variables for point 1 (x,y): ");
 
-printf("Please enter 2 variables for point 2 (x,y): ")
+	scanf("%lf", x1);
+	scanf("%lf", x2);
 
-scanf("%f", &y1);
-scanf("%f", &y2);
+	printf("Please enter 2 variables for point 2 (x,y): ");
+
+	scanf("%lf", y1);
+	scanf("%lf", y2);
 
 }
 
-double calculateDistance();
+double calculateDistance()
 {
 
-double x1,x2,y1,y2;
-askForUserInput(&x1, &x2, &y1, &y2);
+	double x1, x2, y1, y2;
+	askForUserInput(&x1, &x2, &y1, &y2);
 
-double distance = sqrt ((x2-x1) * (x2-x1) + (y2-y1) * (y2-y1));
+	double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); // Distance formula with user's input.
 
-printf("Point #1 entered: x1 = %1.f; y1 = %1.f\n", x1, y1);
-printf("Point #2 entered: x2 = %1.f; y2 = %1.f\n", x2, y2);
-printf("The distance between the two points is: %f ", distance);
+	printf("Point #1 entered: x1 = %1.lf; y1 = %1.lf\n", x1, y1);
+	printf("Point #2 entered: x2 = %1.lf; y2 = %1.lf\n", x2, y2);
+	printf("The distance between the two points is: %.2lf", distance); // Mentions the points entered and the distance between both points.
 
-return distance;
+	return distance;
 }
 
-double calculatePerimeter();
+double calculatePerimeter()
 {
-  //double calculateDistance(); or just "distance"
-  askForUserInput(&x1, &x2, &y1, &y2);
+	double x1, x2, y1, y2;
+	askForUserInput(&x1, &x2, &y1, &y2);
 
-  double xValues = x2+x1;
-  double yValues = y2+y1;
+	double perimeter = 2 * (fabs(x1 - x2) + fabs(y1 - y2)); // Perimeter formula with user's input. Using Fabs to format user's input to absolute value.
 
-  double perimeter = 2 * (xValues + yValues);
+	printf("Point #1 entered: x1 = %1.lf; y1 = %1.lf\n", x1, y1);
+	printf("Point #2 entered: x2 = %1.lf; y2 = %1.lf\n", x2, y2);
+	printf("The perimeter of the city encompassed by your request is: %.2lf", perimeter); // Mentions the points entered and the perimeter between both points.
 
-
-printf("The perimeter of the city encompassed by your request is: %d ", perimeter);
-
-
-return 3.8;
+	return 4;
 }
 
-double calculateArea();
+double calculateArea()
 {
-  askForUserInput(&x1, &x2, &y1, &y2);
+	double x1, x2, y1, y2;
+	askForUserInput(&x1, &x2, &y1, &y2);
+
+	double area = 2 * (fabs(x1 - x2) + fabs(y1 - y2)); // Perimeter formula with user's input. Using Fabs to format user's input to absolute value.
 
 
-  double area = length + width;
+	printf("Point #1 entered: x1 = %1.lf; y1 = %1.lf\n", x1, y1);
+	printf("Point #2 entered: x2 = %1.lf; y2 = %1.lf\n", x2, y2);
+	printf("The area of the city encompassed by your request is: %.2lf", area); // Mentions the points entered and the area of the city.
 
-printf("The area of the city encompassed by your request is: %d", area);
-
-
-return 5;
+	return 5;
 }
 
-double calculateWidth();
+double calculateWidth()
 {
-  askForUserInput(&x1, &x2, &y1, &y2);
+	double x1, x2, y1, y2;
+	askForUserInput(&x1, &x2, &y1, &y2);
 
+	double width = x2 - x1; // Width formula with user's input.
 
-printf("The width of the city encompassed by your request is: %d", width);
+	printf("Point #1 entered: x1 = %1.lf; y1 = %1.lf\n", x1, y1);
+	printf("Point #2 entered: x2 = %1.lf; y2 = %1.lf\n", x2, y2);
+	printf("The width of the city encompassed by your request is: %.2lf", width); // Mentions the points entered and the width of the city.
 
-return 5;
+	return 3;
 }
 
-double calculateHeight();
+double calculateHeight()
 {
-  askForUserInput(&x1, &x2, &y1, &y2);
-height = 5.2
+	double x1, x2, y1, y2;
+	askForUserInput(&x1, &x2, &y1, &y2);
 
-printf("The height of the city encompassed by your request is: %d", height);
+	double height = y2 - y1; // Height formula with user's input.
 
-return 5;
+	printf("Point #1 entered: x1 = %1.lf; y1 = %1.lf\n", x1, y1);
+	printf("Point #2 entered: x2 = %1.lf; y2 = %1.lf\n", x2, y2);
+	printf("The height of the city encompassed by your request is: %2.lf", height); // Mentions the points entered and the height of the city.
+
+	return 3;
 }
