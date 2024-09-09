@@ -12,7 +12,7 @@
 // Header Files
 #include <stdio.h>
 #include <math.h>
-s
+
 #define PI = 3.14159 //Preproccessor directive for PI.
 
 // Prototypes for the functions
